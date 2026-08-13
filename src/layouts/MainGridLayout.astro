@@ -79,6 +79,11 @@ const isBannerMode = backgroundWallpaper.mode === "banner";
 const isFullscreenMode = backgroundWallpaper.mode === "fullscreen";
 const isOverlayMode = backgroundWallpaper.mode === "overlay";
 const isBackgroundEnabled = backgroundWallpaper.mode !== "none";
+
+// 壁纸图片定位：全屏模式使用 fullscreen.position（默认 center），其他模式使用 banner.position
+const wallpaperPosition = isFullscreenMode
+	? (backgroundWallpaper.fullscreen?.position ?? "center")
+	: (backgroundWallpaper.banner?.position ?? "center");
 const isWallpaperSwitchable = backgroundWallpaper.switchable ?? true;
 
 // 检查是否启用水波纹动画效果
@@ -338,7 +343,7 @@ const hasMultipleImages =
                     alt="Mobile background image of the blog"
                     class="object-cover h-full w-full"
                     src={src}
-                    position={backgroundWallpaper.banner?.position}
+                    position={wallpaperPosition}
                     widths={[640, 750, 1080]}
                     sizes="100vw"
                     loading={index === 0 ? "eager" : "lazy"}
@@ -354,7 +359,7 @@ const hasMultipleImages =
                     alt="Desktop background image of the blog"
                     class="object-cover h-full"
                     src={src}
-                    position={backgroundWallpaper.banner?.position}
+                    position={wallpaperPosition}
                     widths={[1280, 1920, 2560]}
                     sizes="100vw"
                     loading={index === 0 ? "eager" : "lazy"}
@@ -373,7 +378,7 @@ const hasMultipleImages =
                     alt="Mobile background image of the blog"
                     class="object-cover h-full w-full"
                     src={backgroundImages.mobile[0]}
-                    position={backgroundWallpaper.banner?.position}
+                    position={wallpaperPosition}
                     widths={[640, 750, 1080]}
                     sizes="100vw"
                     loading="eager"
@@ -389,7 +394,7 @@ const hasMultipleImages =
                     alt="Desktop background image of the blog"
                     class="object-cover h-full"
                     src={backgroundImages.desktop[0]}
-                    position={backgroundWallpaper.banner?.position}
+                    position={wallpaperPosition}
                     widths={[1280, 1920, 2560]}
                     sizes="100vw"
                     loading="eager"

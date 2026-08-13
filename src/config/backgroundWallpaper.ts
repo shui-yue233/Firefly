@@ -2,7 +2,7 @@ import type { BackgroundWallpaperConfig } from "@/types/backgroundWallpaper";
 
 export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	// 壁纸模式："banner" 横幅壁纸，"fullscreen" 全屏壁纸，"overlay" 全屏透明，"none" 纯色背景无壁纸
-	mode: "banner",
+	mode: "fullscreen",
 	// 是否允许用户通过导航栏切换壁纸模式
 	// 且同时维护多种壁纸模式过于复杂（已经屎山代码），在切换时有时候可能会出现一些奇怪的过渡效果或者bug
 	// 推荐只选择自己喜欢的模式并关闭切换功能
@@ -43,12 +43,9 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 桌面背景图片（支持单张或多张随机）
 		// desktop: "assets/images/DesktopWallpaper/d1.avif",
 		desktop: [
-			"assets/images/DesktopWallpaper/d1.avif",
-			"assets/images/DesktopWallpaper/d2.avif",
-			"assets/images/DesktopWallpaper/d3.avif",
-			"assets/images/DesktopWallpaper/d4.avif",
-			"assets/images/DesktopWallpaper/d5.avif",
-			"assets/images/DesktopWallpaper/d6.avif",
+			"assets/images/DesktopWallpaper/e1.jpg",
+			"assets/images/DesktopWallpaper/e2.jpg",
+			"assets/images/DesktopWallpaper/e4.jpg",
 		],
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
@@ -65,7 +62,8 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 支持远程视频URL，本地视频请放在 public/assets/videos/ 目录下
 		// playerUrl: "/assets/videos/firefly.mp4",
 		playerUrl: [
-			"https://www.image2url.com/r2/default/videos/1781765166391-f2ba6648-1597-40e0-9f0a-6768ae39e574.mp4",
+			"/assets/video/1100628.mp4",
+			"/assets/video/1101220.mp4",
 		],
 	},
 	// 横幅壁纸和全屏壁纸共享配置
@@ -81,17 +79,28 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否允许用户通过控制面板切换横幅标题显示
 			switchable: true,
 			// 主页横幅主标题
-			title: "Lovely firefly!",
+			title: "Lovely elaina!",
 			// 主页横幅主标题字体大小
 			titleSize: "3.8rem",
 			// 主页横幅副标题
 			subtitle: [
-				"In Reddened Chrysalis, I Once Rest",
-				"From Shattered Sky, I Free Fall",
-				"Amidst Silenced Stars, I Deep Sleep",
-				"Upon Lighted Fyrefly, I Soon Gaze",
-				"From Undreamt Night, I Thence Shine",
-				"In Finalized Morrow, I Full Bloom",
+				"You are the only protagonist in my life",
+				"我喜欢晴空之下飘着云朵的温柔长天",
+				"我喜欢泛黄的信笺里藏不住的温柔",
+				"我喜欢午后暖阳烘暖衣角的围巾",
+				"我喜欢夜晚路灯漫开的暖黄圈",
+				"我喜欢雨滴敲打窗棂的清响",
+				"我喜欢口袋里揣着的奶糖",
+				"我喜欢静静盛开的海棠",
+				"我喜欢偷看你的背影",
+				"我喜欢璀璨的繁星",
+				"我喜欢与你慢聊",
+				"我喜欢热奶茶",
+				"我喜欢晴天",
+				"我喜欢你",
+				"我说我",
+				"喜欢",
+				"你",
 			],
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
@@ -175,11 +184,13 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// 背景模糊度
 		blur: 10,
 		// 卡片透明度，0-1之间，值越小越透明
-		cardOpacity: 0.5,
+		cardOpacity: 0.1,
 	},
 	// 全屏壁纸模式特有配置
 	fullscreen: {
 		// 图片位置
-		position: "center",
+		// 竖构图壁纸在全屏下会被上下裁切，推荐用 "top"（显示头部）或 "top center"，
+		// 或用横构图（宽>高）壁纸避免裁切
+		position: "top",
 	},
 };

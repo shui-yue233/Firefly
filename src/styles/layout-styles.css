@@ -692,7 +692,7 @@ html[data-wallpaper-mode="fullscreen"] .absolute.w-full.z-30.no-banner-layout {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center !important;
+    object-position: center;
     filter: blur(var(--overlay-blur, 0px));
     /* 放大图片，让模糊后的暗角被容器 overflow:hidden 裁掉 */
     transform: scale(1.05);
@@ -735,7 +735,7 @@ html[data-wallpaper-mode="fullscreen"] body:not(.sticky-navbar) #top-row {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center !important;
+    object-position: center;
     filter: none !important;
     opacity: 1 !important;
 }
