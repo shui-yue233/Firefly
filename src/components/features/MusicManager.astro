@@ -145,9 +145,17 @@ const managerConfigStr = JSON.stringify({
                     .replace(':r', Math.random());
                 if (m.auth) fetchUrl += '&auth=' + m.auth;
 
-                var res = await fetch(fetchUrl);
-                if (!res.ok) throw new Error('HTTP ' + res.status);
-                var data = await res.json();
+                // 给每个 API 请求加超时：部分 Meting 镜像（如官方 i-meto）会挂起不响应，
+                // fetch 默认无超时会一直卡住，导致永远走不到备用 API，音乐"播放不了"
+                var controller = new AbortController();
+                var timeoutId = setTimeout(function () { controller.abort(); }, 8000);
+                try {
+                    var res = await fetch(fetchUrl, { signal: controller.signal });
+                    if (!res.ok) throw new Error('HTTP ' + res.status);
+                    var data = await res.json();
+                } finally {
+                    clearTimeout(timeoutId);
+                }
 
                 if (Array.isArray(data) && data.length > 0) {
                     state.playlist = data.map(function (item) {

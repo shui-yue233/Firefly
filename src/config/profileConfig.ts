@@ -30,13 +30,19 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa7-brands:github",
-			url: "https://github.com/CuteLeaf",
+			url: "https://github.com/shui-yue233",
+			showName: false,
+		},
+		{
+			name: "Bilibili",
+			icon: "simple-icons:bilibili",
+			url: "https://space.bilibili.com/38932988",
 			showName: false,
 		},
 		{
 			name: "Email",
 			icon: "fa7-solid:envelope",
-			url: "mailto:xiaye@msn.com",
+			url: "mailto:3481518301@qq.com",
 			showName: false,
 		},
 		{

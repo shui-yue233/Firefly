@@ -1,3 +1,4 @@
+
 import type { PlantUMLConfig } from "../types/plantumlConfig";
 
 /**
