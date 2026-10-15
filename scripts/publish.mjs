@@ -8,11 +8,14 @@
  *   4. git add / commit / push
  *
  * 用法：
- *   node scripts/publish.mjs            正常走流程（第 3 步会停下来问你）
- *   node scripts/publish.mjs --yes      跳过确认，全自动
- *   node scripts/publish.mjs --dry-run  只演一遍，不提交不推送
- *   node scripts/publish.mjs --no-sync  跳过同步，只提交推送
- *   node scripts/publish.mjs -m "文案"   自定义提交信息
+ *   pnpm ship                正常走流程（会停下来问你确认）
+ *   pnpm ship --yes          跳过确认，全自动
+ *   pnpm ship --dry-run      只演一遍，不提交不推送
+ *   pnpm ship --no-sync      跳过同步，只提交推送
+ *   pnpm ship -m "文案"       自定义提交信息
+ *
+ * 注意：命令名叫 ship 而不是 publish，因为 pnpm publish 是 pnpm 发布 npm 包的内置命令，
+ * 会去 registry.npmjs.org 上传包并报 404，轮不到我们的脚本。
  */
 
 import { execFileSync } from "node:child_process";
