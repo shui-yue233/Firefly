@@ -18,7 +18,8 @@
     "lqips": "npx tsx scripts/generate-lqips.ts",
     "sync": "node scripts/sync-obsidian.mjs",
     "sync:dry": "node scripts/sync-obsidian.mjs --dry-run",
-    "sync:verbose": "node scripts/sync-obsidian.mjs --verbose"
+    "sync:verbose": "node scripts/sync-obsidian.mjs --verbose",
+    "publish": "node scripts/publish.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
